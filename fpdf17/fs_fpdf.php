@@ -71,7 +71,7 @@ class PDF_MC_Table extends FPDF {
          $this->SetFillColor(120, 158, 253);
       }
       if ($a == 'naranja') {
-         $this->SetFillColor(166, 151, 102);
+         $this->SetFillColor(191, 182, 147);
       }
       if ($a == 'amarillo') {
          $this->SetFillColor(255, 255, 0);
