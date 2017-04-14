@@ -21,18 +21,20 @@
 
 
 /**
- * Description of opciones_factura_detallada
+ * Description of opciones_impresion_zapa
  *
  * @author César
+ * @editor JCanda
+ * 
  */
-class opciones_factura_detallada extends fs_controller
+class opciones_impresion_zapa extends fs_controller
 {
    public $factura_detallada_setup;
    public $colores;
    
    public function __construct()
    {
-      parent::__construct(__CLASS__, 'Factura Detallada', 'admin', FALSE, FALSE);
+      parent::__construct(__CLASS__, 'Factura Zapasoft', 'admin', FALSE, FALSE);
    }
    
    protected function private_core()
@@ -72,11 +74,11 @@ class opciones_factura_detallada extends fs_controller
    private function share_extension()
    {
       $fsext = new fs_extension();
-      $fsext->name = 'opciones_fac_detallada';
+      $fsext->name = 'opciones_fac_zapasoft';
       $fsext->from = __CLASS__;
       $fsext->to = 'admin_empresa';
       $fsext->type = 'button';
-      $fsext->text = '<span class="glyphicon glyphicon-print" aria-hidden="true"></span> &nbsp; Factura Detallada';
+      $fsext->text = '<span class="glyphicon glyphicon-print" aria-hidden="true"></span> &nbsp; Factura Zapasoft';
       $fsext->save();
    }
    

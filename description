@@ -1,4 +1,4 @@
-Añade un nuevo formato de impresión de facturas de venta.
+Añade un nuevo formato de impresión de facturas de venta personalizado para Zapasoft.
 <ul>
    <li>Se incluyen porcentajes y totales de IRPF y Recargo de Equivalencia por cada grupo de IVA en la impresion de la factura.</li>
    <li>Sólo es posible incluir un máximo de 4 lineas de IVA en la impresion de la factura.</li>

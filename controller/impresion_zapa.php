@@ -20,8 +20,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-require_once 'plugins/factura_detallada/fpdf17/fs_fpdf.php';
-define('FPDF_FONTPATH', 'plugins/factura_detallada/fpdf17/font/');
+require_once 'plugins/impresion_zapa/fpdf17/fs_fpdf.php';
+define('FPDF_FONTPATH', 'plugins/impresion_zapa/fpdf17/font/');
 
 require_model('cliente.php');
 require_model('factura_cliente.php');
@@ -34,14 +34,14 @@ require_model('cuenta_banco_cliente.php');
 require_once 'extras/phpmailer/class.phpmailer.php';
 require_once 'extras/phpmailer/class.smtp.php';
 
-class factura_detallada extends fs_controller {
+class impresion_zapa extends fs_controller {
 
    public $cliente;
    public $factura;
    public $impresion;
 
    public function __construct() {
-      parent::__construct(__CLASS__, 'Factura Detallada', 'ventas', FALSE, FALSE);
+      parent::__construct(__CLASS__, 'Factura Zapasoft', 'ventas', FALSE, FALSE);
    }
 
    protected function private_core() {
@@ -388,19 +388,19 @@ class factura_detallada extends fs_controller {
    private function share_extensions() {
       $extensiones = array(
           array(
-              'name' => 'factura_detallada',
+              'name' => 'factura_zapasoft',
               'page_from' => __CLASS__,
               'page_to' => 'ventas_factura',
               'type' => 'pdf',
-              'text' => '<span class="glyphicon glyphicon-print"></span>&nbsp; Factura detallada',
+              'text' => '<span class="glyphicon glyphicon-print"></span>&nbsp; Factura Zapasoft',
               'params' => ''
           ),
           array(
-              'name' => 'email_factura_detallada',
+              'name' => 'email_factura_zapasoft',
               'page_from' => __CLASS__,
               'page_to' => 'ventas_factura',
               'type' => 'email',
-              'text' => ucfirst(FS_FACTURA) . ' detallada',
+              'text' => ucfirst(FS_FACTURA) . ' Zapasoft',
               'params' => '&factura=TRUE&tipo=detallada'
           )
       );
