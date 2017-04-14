@@ -130,7 +130,7 @@ class impresion_zapa extends fs_controller {
       // Definimos el color de relleno (gris, rojo, verde, azul)
       /// cargamos la configuración
       $fsvar = new fs_var();
-      $color = $fsvar->simple_get("f_detallada_color");
+      $color = $fsvar->simple_get("f_zapasoft_color");
       if ($color) {
       	$pdf_doc->SetColorRelleno($color);
         $pdf_doc->color_rellono = $color;
@@ -289,7 +289,7 @@ class impresion_zapa extends fs_controller {
                $observa = "\n";
             }
 
-            $may_min = $fsvar->simple_get("f_detallada_print_may_min");
+            $may_min = $fsvar->simple_get("f_zapasoft_print_may_min");
             if($may_min)
                $descripcion_retocada = $this->fix_html($lineas[$i]->descripcion) . $observa;
             else

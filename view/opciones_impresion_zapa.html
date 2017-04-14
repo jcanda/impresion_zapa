@@ -6,7 +6,7 @@
          <div class="page-header">
             <h1>
                <span class="glyphicon glyphicon-cog"></span>
-               Opciones de factura detallada
+               Opciones de factura Zapasoft
                <a href="{$fsc->url()}" class="btn btn-xs btn-default" title="Recargar la página">
                   <span class="glyphicon glyphicon-refresh"></span>
                </a>
@@ -18,11 +18,11 @@
       </div>
    </div>
    <form action="{$fsc->url()}" method="post" class="form">
-      <input type="hidden" name="factura_detallada_setup" value="TRUE"/>
+      <input type="hidden" name="factura_zapasoft_setup" value="TRUE"/>
       <div class="row">
          <div class="col-sm-4">
             <div class="thumbnail">
-               <img src="{#FS_PATH#}plugins/factura_detallada/view/fd.jpg" alt="fdlogo"/>
+               <img src="{#FS_PATH#}plugins/impresion_zapa/view/fd.jpg" alt="fdlogo"/>
             </div>
          </div>
          <div class="col-sm-3">
@@ -30,7 +30,7 @@
                Color de la factura:
                <select class="form-control" name="color">
                {loop="$fsc->colores"}
-                  {if="$value==$fsc->factura_detallada_setup['f_detallada_color']"}
+                  {if="$value==$fsc->factura_zapasoft_setup['f_zapasoft_color']"}
                   <option value="{$value}" selected="">{$value}</option>
                   {else}
                   <option value="{$value}">{$value}</option>
@@ -40,7 +40,7 @@
             </div>
             <div class="form-group">
                 <label class="checkbox-inline">
-                   {if="$fsc->factura_detallada_setup['f_detallada_print_may_min']"}
+                   {if="$fsc->factura_zapasoft_setup['f_zapasoft_print_may_min']"}
                    <input type="checkbox" name="print_may_min" value="TRUE" checked=""/>
                    {else}
                    <input type="checkbox" name="print_may_min" value="TRUE"/>
@@ -50,7 +50,7 @@
             </div>
             <div class="form-group">
                 <label class="checkbox-inline">
-                   {if="$fsc->factura_detallada_setup['f_detallada_QRCODE']"}
+                   {if="$fsc->factura_zapasoft_setup['f_zapasoft_QRCODE']"}
                    <input type="checkbox" name="QRCODE" value="TRUE" checked=""/>
                    {else}
                    <input type="checkbox" name="QRCODE" value="TRUE"/>

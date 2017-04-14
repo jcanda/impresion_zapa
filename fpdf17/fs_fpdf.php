@@ -19,8 +19,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-require_once 'plugins/factura_detallada/fpdf17/fpdf.php';
-require_once 'plugins/factura_detallada/qrcode/qrcode.class.php';
+require_once 'plugins/impresion_zapa/fpdf17/fpdf.php';
+require_once 'plugins/impresion_zapa/qrcode/qrcode.class.php';
 
 class PDF_MC_Table extends FPDF {
 
@@ -113,7 +113,7 @@ class PDF_MC_Table extends FPDF {
       $this->addSociete(utf8_decode($this->fde_nombre), utf8_decode($direccion), utf8_decode($this->fde_email), utf8_decode($this->fde_web));
 
       $fsvar = new fs_var();
-      $Activa_QR = $fsvar->simple_get("f_detallada_QRCODE");
+      $Activa_QR = $fsvar->simple_get("f_zapasoft_QRCODE");
       if($Activa_QR) {
          $cadena = 'BEGIN:VCARD' . "\n";
          $cadena .= 'VERSION:2.1' . "\n";

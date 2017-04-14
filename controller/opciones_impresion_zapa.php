@@ -29,7 +29,7 @@
  */
 class opciones_impresion_zapa extends fs_controller
 {
-   public $factura_detallada_setup;
+   public $factura_zapasoft_setup;
    public $colores;
    
    public function __construct()
@@ -46,23 +46,23 @@ class opciones_impresion_zapa extends fs_controller
       
       /// cargamos la configuración
       $fsvar = new fs_var();
-      $this->factura_detallada_setup = $fsvar->array_get(
+      $this->factura_zapasoft_setup = $fsvar->array_get(
          array(
-            'f_detallada_color' => 'azul',
-            'f_detallada_print_may_min' => FALSE,
-            'f_detallada_QRCODE' => FALSE
+            'f_zapasoft_color' => 'naranja',
+            'f_zapasoft_print_may_min' => TRUE,
+            'f_zapasoft_QRCODE' => FALSE
          ),
          FALSE
       );
       
-      if( isset($_POST['factura_detallada_setup']) )
+      if( isset($_POST['factura_zapasoft_setup']) )
       {
-         $this->factura_detallada_setup['f_detallada_color'] = $_POST['color'];
-         $this->factura_detallada_setup['f_detallada_print_may_min'] = isset($_POST['print_may_min']);
-         $this->factura_detallada_setup['f_detallada_QRCODE'] = isset($_POST['QRCODE']);
+         $this->factura_zapasoft_setup['f_zapasoft_color'] = $_POST['color'];
+         $this->factura_zapasoft_setup['f_zapasoft_print_may_min'] = isset($_POST['print_may_min']);
+         $this->factura_zapasoft_setup['f_zapasoft_QRCODE'] = isset($_POST['QRCODE']);
 
          
-         if( $fsvar->array_save($this->factura_detallada_setup) )
+         if( $fsvar->array_save($this->factura_zapasoft_setup) )
          {
             $this->new_message('Datos guardados correctamente.');
          }
